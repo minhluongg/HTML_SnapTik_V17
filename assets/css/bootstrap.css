@@ -148,12 +148,55 @@ h2, .h2 {
   margin-bottom: 0;
 }
 
+
 .hero {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40px 16px 16px;
+  padding-top: 40px;
   background: #195FD7;
+}
+.hero-input-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0;
+  background: #FFFFFF;
+  border-radius: 4px;
+}
+.hero-input .form-control {
+  border: none;
+  border-radius: unset;
+  padding: 15px 0.75rem;
+  font-weight: 500;
+  line-height: 18px;
+  padding-left: 0;
+  padding-right: 0;
+}
+.icon-link {
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 40px;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+.paste .btn-paste {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 12px 8px 8px;
+  gap: 4px;
+  background: #DAE4FF;
+  border-radius: 6px;
+  border: none;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #0423EE;
+  margin-right: 6px;
 }
 
 h3, .h3 {
@@ -2044,10 +2087,7 @@ progress {
 }
 .form-control:focus {
   color: #212529;
-  background-color: #fff;
-  border-color: #86b7fe;
   outline: 0;
-  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
 .form-control::-webkit-date-and-time-value {
   height: 1.5em;
