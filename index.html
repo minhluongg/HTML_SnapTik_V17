@@ -8,7 +8,7 @@
     <link  rel="stylesheet" href="/assets/css/bootstrap.css"></style>
     <link  rel="stylesheet" href="/assets/css/style.css"></style>
 </head>
-<body id="body">
+<body id="body" class="body">
     <header>
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
@@ -46,18 +46,126 @@
                             <div class="hero-input-left">
                                 <div class="icon-link"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.317 3.0441C13.598 1.76308 15.675 1.76308 16.956 3.0441C18.237 4.32511 18.237 6.40205 16.956 7.68306L13.9331 10.7059C12.6521 11.9869 10.5752 11.9869 9.29416 10.7059C9.19999 10.6117 9.11291 10.5135 9.03283 10.4118C8.81933 10.1405 8.42638 10.0937 8.15515 10.3072C7.88392 10.5207 7.83713 10.9137 8.05063 11.1849C8.1612 11.3254 8.2811 11.4606 8.41028 11.5898C10.1794 13.359 13.0478 13.359 14.817 11.5898L17.8399 8.56694C19.609 6.79777 19.609 3.92938 17.8399 2.16021C16.0707 0.391044 13.2023 0.391043 11.4331 2.16021L8.93309 4.66024C8.68902 4.90432 8.68902 5.30005 8.93309 5.54413C9.17717 5.78821 9.5729 5.78821 9.81698 5.54413L12.317 3.0441Z" fill="#C6C6D5"/><path d="M6.06698 9.2941C7.348 8.01308 9.42493 8.01308 10.7059 9.2941C10.8002 9.38831 10.8872 9.48655 10.9673 9.58821C11.1808 9.85944 11.5737 9.90623 11.845 9.69272C12.1162 9.47922 12.163 9.08627 11.9495 8.81504C11.8389 8.67454 11.7189 8.53933 11.5898 8.41021C9.82066 6.64104 6.95227 6.64104 5.1831 8.41021L2.16025 11.4331C0.391082 13.2022 0.391082 16.0706 2.16025 17.8398C3.92942 19.609 6.79781 19.609 8.56698 17.8398L11.067 15.3398C11.3111 15.0957 11.3111 14.7 11.067 14.4559C10.8229 14.2118 10.4272 14.2118 10.1831 14.4559L7.6831 16.9559C6.40208 18.2369 4.32515 18.2369 3.04413 16.9559C1.76312 15.6749 1.76312 13.598 3.04413 12.3169L6.06698 9.2941Z" fill="#C6C6D5"/><path d="M12.317 3.0441C13.598 1.76308 15.675 1.76308 16.956 3.0441C18.237 4.32511 18.237 6.40205 16.956 7.68306L13.9331 10.7059C12.6521 11.9869 10.5752 11.9869 9.29416 10.7059C9.19999 10.6117 9.11291 10.5135 9.03283 10.4118C8.81933 10.1405 8.42638 10.0937 8.15515 10.3072C7.88392 10.5207 7.83713 10.9137 8.05063 11.1849C8.1612 11.3254 8.2811 11.4606 8.41028 11.5898C10.1794 13.359 13.0478 13.359 14.817 11.5898L17.8399 8.56694C19.609 6.79777 19.609 3.92938 17.8399 2.16021C16.0707 0.391044 13.2023 0.391043 11.4331 2.16021L8.93309 4.66024C8.68902 4.90432 8.68902 5.30005 8.93309 5.54413C9.17717 5.78821 9.5729 5.78821 9.81698 5.54413L12.317 3.0441Z" stroke="#C6C6D5" stroke-width="0.6" stroke-linecap="round"/><path d="M6.06698 9.2941C7.348 8.01308 9.42493 8.01308 10.7059 9.2941C10.8002 9.38831 10.8872 9.48655 10.9673 9.58821C11.1808 9.85944 11.5737 9.90623 11.845 9.69272C12.1162 9.47922 12.163 9.08627 11.9495 8.81504C11.8389 8.67454 11.7189 8.53933 11.5898 8.41021C9.82066 6.64104 6.95227 6.64104 5.1831 8.41021L2.16025 11.4331C0.391082 13.2022 0.391082 16.0706 2.16025 17.8398C3.92942 19.609 6.79781 19.609 8.56698 17.8398L11.067 15.3398C11.3111 15.0957 11.3111 14.7 11.067 14.4559C10.8229 14.2118 10.4272 14.2118 10.1831 14.4559L7.6831 16.9559C6.40208 18.2369 4.32515 18.2369 3.04413 16.9559C1.76312 15.6749 1.76312 13.598 3.04413 12.3169L6.06698 9.2941Z" stroke="#C6C6D5" stroke-width="0.6" stroke-linecap="round"/></svg></div>
                                 <input name="url" id="url" type="text" class="form-control" value="" placeholder="Dán liên kết TikTok vào đây" required="" aria-label="Name" autocomplete="off" autocapitalize="none">
-                                <div class="paste"><button type="button" class="btn btn-paste">Paste</button></div>
+                                <div class="paste"><button type="button" class="btn btn-paste"><i class="icon icon-paste"></i>Paste</button></div>
                             </div>
-                            <div class="hero-input-right"><button type="button" class="btn btn-success"><i class="icon icon-download"></i>Download</button></div>
+                            <div class="hero-input-right"><button type="button" class="btn btn-go flex-center"><i class="icon icon-download"></i>Download</button></div>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
+        <div class=" download">
+            <div class="container">
+                <div class="row download-box">
+                    <div class="col-12 col-md-6">
+                        <div class="down-left">
+                            <div class="user-avatar"><img src="/assets/img/demovavater.png" alt="avatar"></div>
+                            <div class="user-info">
+                                <div class="user-fullname">Bảo vũ Review</div>
+                                <div class="user-username">@baovureview</div>
+                                <div class="user-verified"><svg width="16" height="17" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.805 5.19c.26.26.26.682 0 .942L7.138 12.8a.667.667 0 0 1-.943 0L2.862 9.466a.667.667 0 1 1 .943-.943l2.862 2.862 6.195-6.195c.26-.26.682-.26.943 0Z" fill="#0B4E2D"/></svg>No Watermark</div>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-main btn-back btn-backpc"><svg width="20" height="21" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#a)"><path d="M14.708 6.286A6.631 6.631 0 0 0 10 4.328a6.658 6.658 0 0 0-6.658 6.666A6.658 6.658 0 0 0 10 17.661c3.108 0 5.7-2.125 6.442-5h-1.734A4.992 4.992 0 0 1 10 15.994c-2.758 0-5-2.241-5-5 0-2.758 2.242-5 5-5a4.93 4.93 0 0 1 3.517 1.484l-2.684 2.683h5.834V4.328l-1.959 1.958Z" fill="#fff"/></g><defs><clipPath id="a"><path fill="#fff" transform="translate(0 .994)" d="M0 0h20v20H0z"/></clipPath></defs></svg>Download other video</a>
+                    </div>
+                    <div class="col-12 col-md-4 offset-md-2">
+                        <div class="down-right">
+                            <a href="#" class="btn btn-main active mb-2" onclick="showAd(this, event);sendEvent('click_download_mp4_snapxcdn')">Download</a>
+                            <a href="#" class="btn btn-main mb-2" onclick="showAd(this, event);sendEvent('click_download_mp4_snapxcdn')">Download</a>
+                            <a href="#" class="btn btn-main btn-secon mb-2" onclick="showAd(this, event);sendEvent('click_download_mp4_snapxcdn')">Download</a>
+                            <a href="#" class="btn btn-main btn-back"><svg width="20" height="21" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#a)"><path d="M14.708 6.286A6.631 6.631 0 0 0 10 4.328a6.658 6.658 0 0 0-6.658 6.666A6.658 6.658 0 0 0 10 17.661c3.108 0 5.7-2.125 6.442-5h-1.734A4.992 4.992 0 0 1 10 15.994c-2.758 0-5-2.241-5-5 0-2.758 2.242-5 5-5a4.93 4.93 0 0 1 3.517 1.484l-2.684 2.683h5.834V4.328l-1.959 1.958Z" fill="#fff"/></g><defs><clipPath id="a"><path fill="#fff" transform="translate(0 .994)" d="M0 0h20v20H0z"/></clipPath></defs></svg>Download other video</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="h3">Download SnapTik Android App</div>
+                        <p>I now provide an app for downloading TikTok videos. It is fast, easy, with no watermark and HD quality</p>
+                        <div class="iconapp-box flex-center"><i class="icon icon-ggplay"></i></div>
+                        <h3 class="h3">Download TikTok videos (Musically) Without Watermark for FREE</h3>
+                        <p>SnapTik.App is one of the best TikTok Downloader available online to download video tiktok without a watermark. You are not required to install any software on your computer or mobile phone, all that you need is a TikTok video link, and all the processing is done on our side so you can be one click away from downloading videos to your devices.</p>
+                        <p>I now provide an app for downloading TikTok videos. It is fast, easy, with no watermark and HD quality</p>
+                        <h4 class="h4 mt-3">Key features:</h4>
+                        <ul>
+                            <li>No watermark for better quality, which most of the tools out there can't.</li>
+                            <li>Download TikTok videos, Musically videos on any devices that you want: mobile, PC, or tablet. TikTok only allows users to download videos by its application and downloaded videos contain the watermark.</li>
+                            <li>Download by using your browsers: I want to keep things simple for you. No need to download or install any software. I make an application for this purpose as well but you can only install whenever you like.</li>
+                            <li>It's always free. I only place some ads, which support maintaining our services, and further development.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
+    
+    <div class="modal-down" id="ad-modal">
+      <div class="modal-background"></div>
+      <div class="modal-container">
+        <div class="modal-box">
+          <!-- <div class="notification is-success mb-3">$lang['download_begin_automatically']</div> -->
+          <div class="ads-content" id="ads-content"></div>
+          <button class="btn btn-modal-close" aria-label="close">Close</button>
+        </div>
+        </div>
+      <button class="modal-close" aria-label="close"></button>
+    </div>
     <footer>
+        <div class="copyright">
+            <div class="container">
+                <div class="copyright-link">
+                    <ul class="list-unstyled">
+                        <li><a href="/landing/contact">Contact</a></li>
+                        <li><a href="/landing/privacy-policy">Terms of Service</a></li>
+                        <li><a href="/landing/privacy-policy">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="copyright-text">© 2019 - 2022 <a href="https://snaptik.app" title="SnapTik">SnapTik</a>. All rights reserved.</div>
 
+            </div>
+        </div>
     </footer>
     <script src="/assets/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function iOS() {
+            return [
+                'iPad Simulator',
+                'iPhone Simulator',
+                'iPod Simulator',
+                'iPad',
+                'iPhone',
+                'iPod'
+            ].includes(navigator.platform)
+            ||
+            (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+        }
+        function openModal(e){e.classList.add("is-active")}function closeModal(e){e.classList.remove("is-active")}function closeAllModals(){(document.querySelectorAll(".modal")||[]).forEach(e=>{closeModal(e)})}function showAd(e,l){let o=document.querySelectorAll('ins[data-vignette-loaded="true"]');0==o.length&&iOS()&&l.preventDefault(),l.stopPropagation();openModal(document.getElementById("ad-modal")),document.getElementById("ads-content").innerHTML='<ins class="adsbygoogle" style="display:block; margin: 0 auto;" data-ad-client="ca-pub-2496545456108734" data-ad-slot="8422982901" data-ad-format="auto" data-full-width-responsive="true"></ins>',(adsbygoogle=window.adsbygoogle||[]).push({}),0==o.length&&iOS()&&setTimeout(function(){null!=e.getAttribute("href")?window.location.href=e.getAttribute("href"):(sendEvent("Error_Link_Null"),console.log("Error_Link_Null"))},1e3)}(document.querySelectorAll(".modal-background, .modal-close, .btn-modal-close")||[]).forEach(e=>{let l=e.closest(".modal-down");e.addEventListener("click",()=>{closeModal(l)})}),document.addEventListener("keydown",e=>{27===(e||window.event).keyCode&&closeAllModals()});
+        function sendEvent() {}
+
+        // function showModal() {
+        //     var modal = document.getElementById('exampleModal');
+        //     var body = document.getElementsByTagName("BODY")[0];
+
+        //     body.classList.add("modal-open");
+        //     body.style.overflow = "hidden";
+        //     modal.classList.add("show");
+        //     modal.style.display = "block";
+        //     var modalBackdrop = document.createElement("div");
+        //     modalBackdrop.classList.add("modal-backdrop");
+        //     modalBackdrop.classList.add("fade");
+        //     modalBackdrop.classList.add("show");
+        //     body.appendChild(modalBackdrop);
+
+        // }
+        // var modalContent = document.getElementById('adContent');
+        // window.onclick = function(event) {
+        // if (event.target == modalContent) {
+        //     alert ('ok');
+        // }
+        // }
+    </script>
 </body>
 </html>
