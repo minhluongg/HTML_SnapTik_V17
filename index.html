@@ -5,10 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snaptik V17</title>
-    <link  rel="stylesheet" href="/assets/css/bootstrap.css"></style>
-    <link  rel="stylesheet" href="/assets/css/style.css"></style>
+    <link  rel="stylesheet" href="/assets/css/bootstrap.css?v=1.8"></style>
+    <link  rel="stylesheet" href="/assets/css/style.css?v=1.8"></style>
 </head>
 <body id="body" class="body">
+    <script>
+        const currentTheme = localStorage.getItem("theme");
+        if (currentTheme == "dark") {
+          document.body.classList.toggle("dark-theme");
+        } else if (currentTheme == "light") {
+          document.body.classList.toggle("light-theme");
+        }
+    </script>
     <header>
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
@@ -18,11 +26,11 @@
               </div>
               <div class="navbar-right">
                 <div class="nav-item dropdown">
-                    <button class="reset-button navbar-btn" type="button" role="button">
+                    <button class="reset-button navbar-btn btn-darkmode" type="button" role="button">
                         <i class="icon navbar-darkmode"></i>
                     </button>
-                    <button class="reset-button navbar-btn navbar-lang" type="button" role="button" data-bs-toggle="dropdown" aria-expanded="false"><span>Languages</span><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_1_714)"><path d="M10 18.3333C14.6024 18.3333 18.3333 14.6024 18.3333 10C18.3333 5.39763 14.6024 1.66667 10 1.66667C5.39763 1.66667 1.66667 5.39763 1.66667 10C1.66667 14.6024 5.39763 18.3333 10 18.3333Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M1.66667 10H18.3333" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 1.66667C12.0844 3.94863 13.269 6.91003 13.3333 10C13.269 13.09 12.0844 16.0514 10 18.3333C7.9156 16.0514 6.73104 13.09 6.66667 10C6.73104 6.91003 7.9156 3.94863 10 1.66667V1.66667Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g><defs><clipPath id="clip0_1_714"><rect width="20" height="20" fill="white"/></clipPath></defs></svg></button>
-                    <ul class="dropdown-menu">
+                    <button class="reset-button navbar-btn navbar-lang" type="button" onclick="toggleLang()"><span>Languages</span><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_1_714)"><path d="M10 18.3333C14.6024 18.3333 18.3333 14.6024 18.3333 10C18.3333 5.39763 14.6024 1.66667 10 1.66667C5.39763 1.66667 1.66667 5.39763 1.66667 10C1.66667 14.6024 5.39763 18.3333 10 18.3333Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M1.66667 10H18.3333" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 1.66667C12.0844 3.94863 13.269 6.91003 13.3333 10C13.269 13.09 12.0844 16.0514 10 18.3333C7.9156 16.0514 6.73104 13.09 6.66667 10C6.73104 6.91003 7.9156 3.94863 10 1.66667V1.66667Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g><defs><clipPath id="clip0_1_714"><rect width="20" height="20" fill="white"/></clipPath></defs></svg></button>
+                    <ul class="dropdown-menu dropdown-lang">
                       <li><a class="dropdown-item" href="#">English</a></li>
                       <li><a class="dropdown-item" href="#">Việt Nam</a></li>
                       <li><a class="dropdown-item" href="#">Indonesia</a></li>
@@ -43,16 +51,32 @@
                 <div class="hero-form">
                     <form action="abc.php" name="formurl" method="get">
                         <div class="hero-input">
+                            <div class="alert alert-warning" role="alert" id="alert"></div>
+                            <!-- .progress-box -->
+                            <div class="progress-box">
+                                <div class="progress-text">Please wait a moment <div class="spinner-grow text-light" role="status"><span class="visually-hidden">Loading...</span></div></div>
+                                <div class="progress">
+                                    <div class="progress-bar bg-success" role="progressbar" aria-label="Success example" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                            <!-- <div class="progress-bar" id="progress-bar">
+                                <div class="progress-text">Please wait a moment <div class="spinner-grow text-light" role="status"><span class="visually-hidden">Loading...</span></div>
+                                </div>
+                                <progress id="processBar" class="progress is-success" value="20" max="100">0%</progress>
+                            </div> -->
                             <div class="hero-input-left">
                                 <div class="icon-link"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.317 3.0441C13.598 1.76308 15.675 1.76308 16.956 3.0441C18.237 4.32511 18.237 6.40205 16.956 7.68306L13.9331 10.7059C12.6521 11.9869 10.5752 11.9869 9.29416 10.7059C9.19999 10.6117 9.11291 10.5135 9.03283 10.4118C8.81933 10.1405 8.42638 10.0937 8.15515 10.3072C7.88392 10.5207 7.83713 10.9137 8.05063 11.1849C8.1612 11.3254 8.2811 11.4606 8.41028 11.5898C10.1794 13.359 13.0478 13.359 14.817 11.5898L17.8399 8.56694C19.609 6.79777 19.609 3.92938 17.8399 2.16021C16.0707 0.391044 13.2023 0.391043 11.4331 2.16021L8.93309 4.66024C8.68902 4.90432 8.68902 5.30005 8.93309 5.54413C9.17717 5.78821 9.5729 5.78821 9.81698 5.54413L12.317 3.0441Z" fill="#C6C6D5"/><path d="M6.06698 9.2941C7.348 8.01308 9.42493 8.01308 10.7059 9.2941C10.8002 9.38831 10.8872 9.48655 10.9673 9.58821C11.1808 9.85944 11.5737 9.90623 11.845 9.69272C12.1162 9.47922 12.163 9.08627 11.9495 8.81504C11.8389 8.67454 11.7189 8.53933 11.5898 8.41021C9.82066 6.64104 6.95227 6.64104 5.1831 8.41021L2.16025 11.4331C0.391082 13.2022 0.391082 16.0706 2.16025 17.8398C3.92942 19.609 6.79781 19.609 8.56698 17.8398L11.067 15.3398C11.3111 15.0957 11.3111 14.7 11.067 14.4559C10.8229 14.2118 10.4272 14.2118 10.1831 14.4559L7.6831 16.9559C6.40208 18.2369 4.32515 18.2369 3.04413 16.9559C1.76312 15.6749 1.76312 13.598 3.04413 12.3169L6.06698 9.2941Z" fill="#C6C6D5"/><path d="M12.317 3.0441C13.598 1.76308 15.675 1.76308 16.956 3.0441C18.237 4.32511 18.237 6.40205 16.956 7.68306L13.9331 10.7059C12.6521 11.9869 10.5752 11.9869 9.29416 10.7059C9.19999 10.6117 9.11291 10.5135 9.03283 10.4118C8.81933 10.1405 8.42638 10.0937 8.15515 10.3072C7.88392 10.5207 7.83713 10.9137 8.05063 11.1849C8.1612 11.3254 8.2811 11.4606 8.41028 11.5898C10.1794 13.359 13.0478 13.359 14.817 11.5898L17.8399 8.56694C19.609 6.79777 19.609 3.92938 17.8399 2.16021C16.0707 0.391044 13.2023 0.391043 11.4331 2.16021L8.93309 4.66024C8.68902 4.90432 8.68902 5.30005 8.93309 5.54413C9.17717 5.78821 9.5729 5.78821 9.81698 5.54413L12.317 3.0441Z" stroke="#C6C6D5" stroke-width="0.6" stroke-linecap="round"/><path d="M6.06698 9.2941C7.348 8.01308 9.42493 8.01308 10.7059 9.2941C10.8002 9.38831 10.8872 9.48655 10.9673 9.58821C11.1808 9.85944 11.5737 9.90623 11.845 9.69272C12.1162 9.47922 12.163 9.08627 11.9495 8.81504C11.8389 8.67454 11.7189 8.53933 11.5898 8.41021C9.82066 6.64104 6.95227 6.64104 5.1831 8.41021L2.16025 11.4331C0.391082 13.2022 0.391082 16.0706 2.16025 17.8398C3.92942 19.609 6.79781 19.609 8.56698 17.8398L11.067 15.3398C11.3111 15.0957 11.3111 14.7 11.067 14.4559C10.8229 14.2118 10.4272 14.2118 10.1831 14.4559L7.6831 16.9559C6.40208 18.2369 4.32515 18.2369 3.04413 16.9559C1.76312 15.6749 1.76312 13.598 3.04413 12.3169L6.06698 9.2941Z" stroke="#C6C6D5" stroke-width="0.6" stroke-linecap="round"/></svg></div>
                                 <input name="url" id="url" type="text" class="form-control" value="" placeholder="Dán liên kết TikTok vào đây" required="" aria-label="Name" autocomplete="off" autocapitalize="none">
-                                <div class="paste"><button type="button" class="btn btn-paste"><i class="icon icon-paste"></i>Paste</button></div>
+                                <div class="paste"><button type="button" class="btn btn-paste"><i class="icon icon-paste"></i><span>Paste</span></button></div>
                             </div>
-                            <div class="hero-input-right"><button type="button" class="btn btn-go flex-center"><i class="icon icon-download"></i>Download</button></div>
+                            <div class="hero-input-right"><button type="submit" class="btn btn-go flex-center"><i class="icon icon-download"></i>Download</button></div>
                         </div>
                     </form>
                 </div>
             </div>
+        </div>
+        <div class="ad-box">
+            <div class="container"><div class="ad-container"></div></div>
         </div>
         <div class=" download">
             <div class="container">
@@ -70,7 +94,7 @@
                     </div>
                     <div class="col-12 col-md-4 offset-md-2">
                         <div class="down-right">
-                            <a href="#" class="btn btn-main active mb-2" onclick="showAd(this, event);sendEvent('click_download_mp4_snapxcdn')">Download</a>
+                            <a href="https://cdn.snaptik.app/v2/?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJodHRwczovL3YzOS1hcy50aWt0b2tjZG4uY29tLzEwZDJkMGZjYTVmNTcyY2Q0ODhmMGZkZjkzMWZjM2Y0LzYzNTE2YjRkL3ZpZGVvL3Rvcy91c2Vhc3QyYS90b3MtdXNlYXN0MmEtcHZlLTAwMzctYWlzby82NzIwMzY5MzZiMmU0NTJiYmVkMTZmZmYwZGZiZmUwOS8_YT0xMTgwJmNoPTAmY3I9MCZkcj0wJmNkPTAlN0MwJTdDMCU3QzAmY3Y9MSZicj0xOTc4JmJ0PTk4OSZjcz0wJmRzPTYmZnQ9aXVzZC15bVZabW8wUGN1WjhCa1ZRU2VQdjRfS0pkbUMwJm1pbWVfdHlwZT12aWRlb19tcDQmcXM9MCZyYz1PRFE3YVdnMmFUVTZaalF6T0dSbE9FQnBhbTE0ZFdVNlpqWnFaek16Wmpnek0wQmdNaTB0TDJCaU5tRXhYelppWVM5aFlTTXdYaTh4Y2pSdlh6TmdMUzFrTDJOemN3JTNEJTNEJmJ0YWc9ODAwMDAmY2M9MjAiLCJmaWxlbmFtZSI6IlNuYXB0aWsuYXBwXzcxNTUzODI4MjIzOTQ0OTgzMzEubXA0IiwiZXhwIjoxNjY2MjYyMjU3fQ.BNadzqg36KZCc3B7n2v1zBY-mi32xgG1HC7YHMGVfvc&amp;dl=1" class="btn btn-main active mb-2" onclick="showAd(this, event);sendEvent('click_download_mp4_snapxcdn')">Download</a>
                             <a href="#" class="btn btn-main mb-2" onclick="showAd(this, event);sendEvent('click_download_mp4_snapxcdn')">Download</a>
                             <a href="#" class="btn btn-main btn-secon mb-2" onclick="showAd(this, event);sendEvent('click_download_mp4_snapxcdn')">Download</a>
                             <a href="#" class="btn btn-main btn-back"><svg width="20" height="21" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#a)"><path d="M14.708 6.286A6.631 6.631 0 0 0 10 4.328a6.658 6.658 0 0 0-6.658 6.666A6.658 6.658 0 0 0 10 17.661c3.108 0 5.7-2.125 6.442-5h-1.734A4.992 4.992 0 0 1 10 15.994c-2.758 0-5-2.241-5-5 0-2.758 2.242-5 5-5a4.93 4.93 0 0 1 3.517 1.484l-2.684 2.683h5.834V4.328l-1.959 1.958Z" fill="#fff"/></g><defs><clipPath id="a"><path fill="#fff" transform="translate(0 .994)" d="M0 0h20v20H0z"/></clipPath></defs></svg>Download other video</a>
@@ -101,18 +125,6 @@
             </div>
         </div>
     </main>
-    
-    <div class="modal-down" id="ad-modal">
-      <div class="modal-background"></div>
-      <div class="modal-container">
-        <div class="modal-box">
-          <!-- <div class="notification is-success mb-3">$lang['download_begin_automatically']</div> -->
-          <div class="ads-content" id="ads-content"></div>
-          <button class="btn btn-modal-close" aria-label="close">Close</button>
-        </div>
-        </div>
-      <button class="modal-close" aria-label="close"></button>
-    </div>
     <footer>
         <div class="copyright">
             <div class="container">
@@ -128,44 +140,134 @@
             </div>
         </div>
     </footer>
-    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+    <div class="ad-sticky only-mobile" id="ad-sticky">
+        <div class="ad-item">
+            <div class="ad-sticky-ins"></div>
+            <div class="ad-close" onclick="document.getElementById('ad-sticky').remove()"><svg width="22px" height="22px" viewBox="0 0 16 16" fill="#000" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"></path></svg></div>
+        </div>
+    </div>
+    <div class="modal-down" id="ad-modal">
+      <div class="modal-background"></div>
+      <div class="modal-container">
+        <div class="container modal-box">
+          <!-- <div class="notification is-success mb-3">$lang['download_begin_automatically']</div> -->
+          <div class="ads-content" id="ads-content"></div>
+          <button class="btn btn-modal-close" aria-label="close">Close</button>
+        </div>
+        </div>
+      <button class="modal-close" aria-label="close"></button>
+    </div>
+    <button class="btn share-button" type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M503.691 189.836L327.687 37.851C312.281 24.546 288 35.347 288 56.015v80.053C127.371 137.907 0 170.1 0 322.326c0 61.441 39.581 122.309 83.333 154.132 13.653 9.931 33.111-2.533 28.077-18.631C66.066 312.814 132.917 274.316 288 272.085V360c0 20.7 24.3 31.453 39.687 18.164l176.004-152c11.071-9.562 11.086-26.753 0-36.328z"/></svg></button>
     <script>
-        function iOS() {
-            return [
-                'iPad Simulator',
-                'iPhone Simulator',
-                'iPod Simulator',
-                'iPad',
-                'iPhone',
-                'iPod'
-            ].includes(navigator.platform)
-            ||
-            (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+const lang = {paste:"Paste", clear:"Clear", linkEmpty:"Link is empty."};
+function iOS() {
+    return [
+        'iPad Simulator',
+        'iPhone Simulator',
+        'iPod Simulator',
+        'iPad',
+        'iPhone',
+        'iPod'
+    ].includes(navigator.platform)
+    ||
+    (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+}
+function isAndroid() {
+    var useragent = navigator.userAgent.toLowerCase();
+    return useragent.indexOf("android") > -1;
+}
+
+function openModal(e){e.classList.add("is-active"),document.getElementById("body").style.overflow="hidden"}function closeModal(e){e.classList.remove("is-active"),document.getElementById("body").style.overflow="auto"}function closeAllModals(){(document.querySelectorAll(".modal")||[]).forEach(e=>{closeModal(e)})}function showAd(e,l){let t=document.querySelectorAll('ins[data-vignette-loaded="true"]');0==t.length&&iOS()&&l.preventDefault(),l.stopPropagation(),openModal(document.getElementById("ad-modal")),document.getElementById("ads-content").innerHTML='<ins class="adsbygoogle" style="display:block; margin: 0 auto;" data-ad-client="ca-pub-2496545456108734" data-ad-slot="8422982901" data-ad-format="auto" data-full-width-responsive="true"></ins>',(adsbygoogle=window.adsbygoogle||[]).push({}),0==t.length&&iOS()&&setTimeout(function(){null!=e.getAttribute("href")?window.location.href=e.getAttribute("href"):sendEvent("Error_Link_Null")},1e3)}(document.querySelectorAll(".modal-background, .modal-close, .btn-modal-close")||[]).forEach(e=>{let l=e.closest(".modal-down");e.addEventListener("click",()=>{closeModal(l)})}),document.addEventListener("keydown",e=>{27===(e||window.event).keyCode&&closeAllModals()});
+function sendEvent() {}
+
+const toggleSwitch = document.querySelector(".btn-darkmode");
+
+toggleSwitch.addEventListener("click", function () {
+    document.body.classList.toggle("dark-theme");
+    var theme = document.body.classList.contains("dark-theme")
+      ? "dark"
+      : "light";
+  localStorage.setItem("theme", theme);
+});
+
+
+
+const btnPaste = document.querySelector(".btn-paste");
+const inputUrl = document.getElementById("url");
+
+function showBtnClear() {
+    btnPaste.classList.add('active');
+    document.querySelector(".btn-paste span").innerHTML = lang.clear;
+}
+
+btnPaste.addEventListener("click", function () {
+  if (btnPaste.classList.contains("active")) {
+    inputUrl.value = "";
+    if (navigator.clipboard) {
+        btnPaste.classList.remove('active');
+        document.querySelector(".btn-paste span").innerHTML = lang.paste;
+    }
+
+  } else {
+    navigator.clipboard.readText().then(function(e) {
+        if (e != "") {
+            inputUrl.value = e;
+            showBtnClear();
+        } else {
+            showAlert(lang.linkEmpty);
+
         }
-        function openModal(e){e.classList.add("is-active")}function closeModal(e){e.classList.remove("is-active")}function closeAllModals(){(document.querySelectorAll(".modal")||[]).forEach(e=>{closeModal(e)})}function showAd(e,l){let o=document.querySelectorAll('ins[data-vignette-loaded="true"]');0==o.length&&iOS()&&l.preventDefault(),l.stopPropagation();openModal(document.getElementById("ad-modal")),document.getElementById("ads-content").innerHTML='<ins class="adsbygoogle" style="display:block; margin: 0 auto;" data-ad-client="ca-pub-2496545456108734" data-ad-slot="8422982901" data-ad-format="auto" data-full-width-responsive="true"></ins>',(adsbygoogle=window.adsbygoogle||[]).push({}),0==o.length&&iOS()&&setTimeout(function(){null!=e.getAttribute("href")?window.location.href=e.getAttribute("href"):(sendEvent("Error_Link_Null"),console.log("Error_Link_Null"))},1e3)}(document.querySelectorAll(".modal-background, .modal-close, .btn-modal-close")||[]).forEach(e=>{let l=e.closest(".modal-down");e.addEventListener("click",()=>{closeModal(l)})}),document.addEventListener("keydown",e=>{27===(e||window.event).keyCode&&closeAllModals()});
-        function sendEvent() {}
+    })
+  }
+});
 
-        // function showModal() {
-        //     var modal = document.getElementById('exampleModal');
-        //     var body = document.getElementsByTagName("BODY")[0];
+if (navigator.clipboard) {
+    btnPaste.style.display = "flex";
+}
 
-        //     body.classList.add("modal-open");
-        //     body.style.overflow = "hidden";
-        //     modal.classList.add("show");
-        //     modal.style.display = "block";
-        //     var modalBackdrop = document.createElement("div");
-        //     modalBackdrop.classList.add("modal-backdrop");
-        //     modalBackdrop.classList.add("fade");
-        //     modalBackdrop.classList.add("show");
-        //     body.appendChild(modalBackdrop);
+inputUrl.addEventListener("keyup", function(e) {
+    if (inputUrl.value.length > 0) {
+        showBtnClear();
+    }
+    hideAlert();
+});
 
-        // }
-        // var modalContent = document.getElementById('adContent');
-        // window.onclick = function(event) {
-        // if (event.target == modalContent) {
-        //     alert ('ok');
-        // }
-        // }
+const alertEL = document.getElementById("alert");
+
+function showAlert(mess) {
+    alertEL.classList.add('active');
+    alertEL.innerHTML = mess;
+}
+function hideAlert(mess) {
+    alertEL.classList.remove('active');
+    alertEL.innerHTML = '';
+}
+
+function toggleLang(){document.querySelectorAll('.navbar-lang')[0].classList.toggle('show');document.querySelector('.dropdown-lang').classList.toggle('show')}
+// Share
+const shareButton = document.querySelector('.share-button');
+shareButton.addEventListener('click', event => {
+if (navigator.share) { 
+    navigator.share({
+    title: 'Share SnapTik',
+    url: 'https://snaptik.app/en'
+    }).then(() => {
+    sendEvent('Share_sucs_by_webapi');
+    })
+    .catch(console.error);
+    } else {
+    sendEvent('Share_webapi_not_support');
+    }
+    sendEvent('share_click_btnShare');
+});
+// Analytics v3
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-162798444-8', 'auto');
+      ga('send', 'pageview');
+function sendEvent(e,n=""){""==n?ga("send","event","home",e):ga("send","event","home",e,n)}
     </script>
 </body>
 </html>

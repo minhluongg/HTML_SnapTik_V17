@@ -159,6 +159,29 @@ h2, .h2 {
 .hero-form {
   margin-top: 32px;
 }
+.hero-input {
+  position: relative;
+}
+.hero-input .alert {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  transform: translateY(calc(-100% - 5px));
+}
+
+.hero-input .alert:after {
+  content: '';
+  position: absolute;
+  left: 1px;
+  bottom: -6px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #ffdd57;
+  clear: both;
+}
 .hero-input-left {
   display: flex;
   flex-direction: row;
@@ -176,6 +199,9 @@ h2, .h2 {
   padding-left: 0;
   padding-right: 0;
 }
+.ad-container {
+  min-height: 100px;
+}
 .icon-link {
   height: 48px;
   display: flex;
@@ -186,7 +212,7 @@ h2, .h2 {
   flex-shrink: 0;
 }
 .paste .btn-paste {
-  display: flex;
+  display: none;
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -220,7 +246,32 @@ h2, .h2 {
   margin-bottom: 1rem;
   border: none;
 }
-
+.hero-input .progress-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #195fd7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  gap: 8px;
+  color: #fff;
+  display: none;
+}
+.hero-input .progress-box.active {
+  display: flex;
+}
+.hero-input .progress {
+  width: 100%;
+}
+.hero-input .spinner-grow {
+  width: 1em;
+  height: 1em;
+}
 
 h3, .h3 {
   font-weight: 600;
@@ -3598,6 +3649,9 @@ textarea.form-control-lg {
 
 .dropdown-menu.show {
   display: block;
+  top: 100%;
+  right: 0;
+  margin-top: var(--bs-dropdown-spacer);
 }
 
 .dropdown-header {
@@ -4815,8 +4869,8 @@ header .navbar {--bs-navbar-padding-y: 0;border-bottom: 1px solid #D8D8D8;}
 
 .alert {
   --bs-alert-bg: transparent;
-  --bs-alert-padding-x: 1rem;
-  --bs-alert-padding-y: 1rem;
+  --bs-alert-padding-x: .5rem;
+  --bs-alert-padding-y: .5rem;
   --bs-alert-margin-bottom: 1rem;
   --bs-alert-color: inherit;
   --bs-alert-border-color: transparent;
@@ -4887,10 +4941,15 @@ header .navbar {--bs-navbar-padding-y: 0;border-bottom: 1px solid #D8D8D8;}
 }
 
 .alert-warning {
-  --bs-alert-color: #664d03;
-  --bs-alert-bg: #fff3cd;
-  --bs-alert-border-color: #ffecb5;
+  --bs-alert-color: rgba(0,0,0,.7);
+  --bs-alert-bg: #ffdd57;
+  --bs-alert-border-color: #ffdd57;
+  display: none;
 }
+.alert-warning.active {
+  display: block;
+}
+
 .alert-warning .alert-link {
   color: #523e02;
 }
