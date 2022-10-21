@@ -3648,7 +3648,7 @@ textarea.form-control-lg {
 }
 
 .dropdown-menu.show {
-  display: block;
+  display: grid;
   top: 100%;
   right: 0;
   margin-top: var(--bs-dropdown-spacer);
@@ -3963,7 +3963,7 @@ header .navbar {--bs-navbar-padding-y: 0;border-bottom: 1px solid #D8D8D8;}
   color: #313131;
 }
 .navbar-app {
-  display: flex;
+  display: none;
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -3980,6 +3980,7 @@ header .navbar {--bs-navbar-padding-y: 0;border-bottom: 1px solid #D8D8D8;}
 
 .navbar-left {
   display: flex;
+  align-items: center;
 }
 
 @media (min-width: 768px) {
@@ -11094,5 +11095,3 @@ header .navbar {--bs-navbar-padding-y: 0;border-bottom: 1px solid #D8D8D8;}
     display: none !important;
   }
 }
-
-/*# sourceMappingURL=bootstrap.css.map */
