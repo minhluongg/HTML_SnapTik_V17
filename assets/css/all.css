@@ -1170,7 +1170,7 @@ header .navbar {
     height: 20px;
     display: inline-block;
   }
-  .download {
+  .download .container {
     padding-bottom: 2rem;
 }
 

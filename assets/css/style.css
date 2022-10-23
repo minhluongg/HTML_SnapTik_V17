@@ -238,7 +238,7 @@ i.icon, i.icon + span {
   display: inline-block;
 }
 
-.download {
+.download .container {
   padding-bottom: 2rem;
 }
 
