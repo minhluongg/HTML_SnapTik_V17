@@ -560,6 +560,13 @@ i.icon, i.icon + span {
 .dark-theme .example b {
   color: #e8eaed;
 }
+.dark-theme .ad-sticky, .dark-theme .dark-theme .ad-close {
+  background: #0c1625;
+  box-shadow: 0 -1px 3px 0 rgba(255, 255, 255, 0.1019607843), 0 -1px 2px 0 rgba(255, 255, 255, 0.0588235294);
+}
+.dark-theme .ad-close svg {
+  fill: #fff;
+}
 @media (min-width: 992px) {
   .dark-theme .navbar-btn.navbar-lang {
     color: #FFF;

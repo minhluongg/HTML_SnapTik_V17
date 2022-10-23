@@ -541,6 +541,14 @@ i.icon, i.icon+span {
     .example b {
         color: #e8eaed;
     }
+    .ad-sticky, .dark-theme .ad-close {
+        background: #0c1625;
+        box-shadow: 0 -1px 3px 0 #ffffff1a, 0 -1px 2px 0 #ffffff0f;
+    }
+    
+    .ad-close svg {
+        fill: #fff;
+    }
 
     @media (min-width: 992px) {
         .navbar-btn.navbar-lang {
