@@ -1091,6 +1091,9 @@ header .navbar {
         -ms-flex-align: start;
             align-items: flex-start;
   }
+  .user-avatar img {
+    border-radius: 8px;
+}
   
   .user-fullname {
     font-weight: 600;
@@ -1367,18 +1370,26 @@ header .navbar {
     min-height: 250px;
   }
   
+  
+.ad-sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  height: 50px;
+  width: 100%;
+  left: 0;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0 -1px 3px 0 rgba(0, 0, 0, 0.1019607843), 0 -1px 2px 0 rgba(0, 0, 0, 0.0588235294);
+  display: none;
+}
+
+@media only screen and (max-width: 479px) {
   .ad-sticky {
-    position: -webkit-sticky;
-    position: sticky;
-    bottom: 0;
-    height: 50px;
-    width: 100%;
-    left: 0;
-    text-align: center;
-    background-color: #fff;
-    -webkit-box-shadow: 0 -1px 3px 0 #0000001a, 0 -1px 2px 0 #0000000f;
-            box-shadow: 0 -1px 3px 0 #0000001a, 0 -1px 2px 0 #0000000f;
+    display: block;
   }
+}
+
   
   .ad-close {
     position: absolute;

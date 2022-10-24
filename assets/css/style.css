@@ -171,6 +171,10 @@ i.icon, i.icon + span {
   border-radius: 8px;
 }
 
+.user-avatar img {
+  border-radius: 8px;
+}
+
 .user-info {
   display: flex;
   flex-direction: column;
@@ -418,8 +422,14 @@ i.icon, i.icon + span {
   text-align: center;
   background-color: #fff;
   box-shadow: 0 -1px 3px 0 rgba(0, 0, 0, 0.1019607843), 0 -1px 2px 0 rgba(0, 0, 0, 0.0588235294);
+  display: none;
 }
 
+@media only screen and (max-width: 479px) {
+  .ad-sticky {
+    display: block;
+  }
+}
 .ad-close {
   position: absolute;
   top: -24px;
